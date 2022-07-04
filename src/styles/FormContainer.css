@@ -3,4 +3,27 @@
   background-color: aquamarine;
   padding: 30px;
   margin: 40px auto;
+  min-height: 120vh;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid transparent;
 }

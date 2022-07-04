@@ -1,0 +1,19 @@
+.cv-container {
+  width: 798px;
+  background-color: aquamarine;
+  margin: 40px auto;
+  min-height: 120vh;
+}
+
+.cv-main-container {
+  display: flex;
+}
+
+.cv-main {
+  flex-grow: 1;
+}
+
+.cv-sidebar {
+  min-width: 180px;
+  margin-right: 20px;
+}
