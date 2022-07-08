@@ -3,18 +3,14 @@ import CvMain from './CvMain'
 import CvSidebar from './CvSidebar'
 
 import '../styles/CvContainer.css'
+import CvHeader from './CvHeader'
 
-const CvContainer = () => {
+const CvContainer = (props) => {
+  const { fName, lName, title } = props.personalData
   return (
     <div>
       <div className='cv-container'>
-        <div
-          className='cv-header'
-          style={{
-            backgroundColor: 'blue',
-            height: '120px',
-          }}
-        ></div>
+        <CvHeader fName={fName} lName={lName} title={title} />
         <div className='cv-main-container'>
           <CvMain />
           <CvSidebar />

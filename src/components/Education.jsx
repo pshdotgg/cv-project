@@ -1,69 +1,123 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from './Button'
 import uniqid from 'uniqid'
 
-const Education = () => {
-  const educationForm = (
-    <>
-      <form action='#'>
-        <input type='text' placeholder='University' />
-        <label htmlFor=''></label>
+const Education = (props) => {
+  const [education, setEducation] = useState({
+    uni: '',
+    city: '',
+    degree: '',
+    sub: '',
+    from: '',
+    to: '',
+  })
 
-        <input type='text' placeholder='City' />
-        <label htmlFor=''></label>
+  // function handleChange(e, obj) {
+  //   // // setEducation(() => [{ ...education, [e.target.name]: e.target.value }])
+  //   // // console.log([{ ...education[0], [e.target.name]: e.target.value }])
 
-        <input type='text' placeholder='Degree' />
-        <label htmlFor=''></label>
+  //   // const inputElements = e.target.parentElement.children
 
-        <input type='text' placeholder='Subject' />
-        <label htmlFor=''></label>
+  //   // Array.from(inputElements).map((input) => {
+  //   //   if (input.name === e.target.name) {
+  //   //     // setEducation(() => [{ ...education, [e.target.name]: e.target.value }])
+  //   //     // console.log([{ ...education, ...{...education[0], [e.target.name]: e.target.value }}])
+  //   //   }
+  //   // })
 
-        <input type='text' placeholder='From' />
-        <label htmlFor=''></label>
+  //   e.preventDefault()
+  //   const { name, value } = e.target
 
-        <input type='text' placeholder='To' />
-        <label htmlFor=''></label>
-      </form>
-    </>
-  )
+  //   obj = { ...obj, [name]: value }
+  //   console.log(e.target.parentElement)
 
-  const [education, setEducation] = useState([{ id: 0, item: educationForm }])
+  //   // setEducation([
+  //   //   ...education,
+  //   //   { ...education[Number.parseInt(e.target.parentElement.id)], obj },
+  //   // ])
+  //   // console.log(e.target.parentElement.id)
 
-  const addComponent = () => {
-    setEducation([
-      ...education,
-      {
-        id: education.length > 0 ? education[education.length - 1].id + 1 : 0,
-        item: educationForm,
-      },
-    ])
-  }
+  //   // console.log(typeof e.target.parentElement.id)
+  // }
 
-  const removeComponent = (id) => {
-    setEducation(education.filter((ed) => ed.id !== id))
+  // const addComponent = () => {
+  //   const indexId = education[education.length - 1].id
+  //   setEducation([
+  //     ...education,
+  //     {
+  //       ...education[indexId],
+  //       id: education.length > 0 ? indexId + 1 : 0,
+  //     },
+  //   ])
+  // }
+
+  // const removeComponent = (id) => {
+  //   setEducation(education.filter((ed) => ed.id !== id))
+  // }
+
+  useEffect(() => {
+    props.onSaveEducationData(education)
+  }, [education])
+
+  const changeHandler = (e) => {
+    setEducation((prevState) => {
+      return { ...prevState, [e.target.name]: e.target.value }
+    })
   }
 
   return (
     <div>
-      <h3>Education</h3>
+      <form>
+        <input
+          type='text'
+          placeholder='University'
+          name='uni'
+          value={education.uni}
+          onChange={changeHandler}
+        />
 
-      {education.map((obj) => (
-        <div key={uniqid()}>
-          {obj.item}
-          <Button
-            name='Delete'
-            addClass='default-btn'
-            handleClick={() => removeComponent(obj.id)}
-          />
-        </div>
-      ))}
-      <Button name='Add' addClass='default-btn' handleClick={addComponent} />
+        <input
+          type='text'
+          placeholder='City'
+          name='city'
+          value={education.city}
+          onChange={changeHandler}
+        />
 
-      <Button name='Generate PDF' addClass='pdf-btn' />
-      <Button name='Load Example' addClass='example-btn' />
-      <Button name='Reset' addClass='reset-btn' />
+        <input
+          type='text'
+          placeholder='Degree'
+          name='degree'
+          value={education.degree}
+          onChange={changeHandler}
+        />
+
+        <input
+          type='text'
+          placeholder='Subject'
+          name='sub'
+          value={education.sub}
+          onChange={changeHandler}
+        />
+
+        <input
+          type='text'
+          placeholder='From'
+          name='from'
+          value={education.from}
+          onChange={changeHandler}
+        />
+
+        <input
+          type='text'
+          placeholder='To'
+          name='to'
+          value={education.to}
+          onChange={changeHandler}
+        />
+      </form>
+      <Button name='Delete' addClass='default-btn' />
     </div>
   )
 }
-
 export default Education
