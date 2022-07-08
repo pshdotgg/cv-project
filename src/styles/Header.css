@@ -1,7 +1,8 @@
-h1 {
+.header {
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #2d3a8c;
   font-size: 3rem;
+  color: #f5f7fa;
   margin: 0;
   padding: 30px;
 }

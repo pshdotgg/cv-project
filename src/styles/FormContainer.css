@@ -1,9 +1,11 @@
 .form-container {
   width: 798px;
-  background-color: aquamarine;
+  background-color: #f5f7fa;
   padding: 30px;
   margin: 40px auto;
   min-height: 120vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.2);
 }
 
 form {
@@ -19,6 +21,7 @@ input {
   border-radius: 6px;
   border: 1px solid transparent;
   outline: none;
+  font-size: 0.9rem;
 }
 
 textarea {
@@ -27,4 +30,6 @@ textarea {
   border-radius: 6px;
   outline: none;
   border: 1px solid transparent;
+  font-family: Roboto, sans-serif;
+  font-size: 0.9rem;
 }

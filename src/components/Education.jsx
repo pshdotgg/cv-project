@@ -5,11 +5,11 @@ import uniqid from 'uniqid'
 const Education = (props) => {
   const [education, setEducation] = useState({
     uni: '',
-    city: '',
+    eduCity: '',
     degree: '',
     sub: '',
-    from: '',
-    to: '',
+    eduFrom: '',
+    eduTo: '',
   })
 
   // function handleChange(e, obj) {
@@ -79,8 +79,8 @@ const Education = (props) => {
         <input
           type='text'
           placeholder='City'
-          name='city'
-          value={education.city}
+          name='eduCity'
+          value={education.eduCity}
           onChange={changeHandler}
         />
 
@@ -103,20 +103,19 @@ const Education = (props) => {
         <input
           type='text'
           placeholder='From'
-          name='from'
-          value={education.from}
+          name='eduFrom'
+          value={education.eduFrom}
           onChange={changeHandler}
         />
 
         <input
           type='text'
           placeholder='To'
-          name='to'
-          value={education.to}
+          name='eduTo'
+          value={education.eduTo}
           onChange={changeHandler}
         />
       </form>
-      <Button name='Delete' addClass='default-btn' />
     </div>
   )
 }

@@ -17,19 +17,39 @@ const App = () => {
     bio: '',
   })
 
+  const [experienceData, setExperienceData] = useState({
+    position: '',
+    company: '',
+    expCity: '',
+    expFrom: '',
+    expTo: '',
+  })
+
+  const [educationData, setEducationData] = useState({
+    uni: '',
+    eduCity: '',
+    degree: '',
+    sub: '',
+    eduFrom: '',
+    eduTo: '',
+  })
+
   const addPersonalHandler = (personal) => {
     setPersonalData((prevPersonal) => {
       return { ...prevPersonal, ...personal }
     })
-    console.log('from App', personal)
   }
 
   const addExperienceHandler = (experience) => {
-    console.log(experience)
+    setExperienceData((prevExperience) => {
+      return { ...prevExperience, ...experience }
+    })
   }
 
   const addEducationHandler = (education) => {
-    console.log(education)
+    setEducationData((prevEducation) => {
+      return { ...prevEducation, ...education }
+    })
   }
 
   return (
@@ -40,7 +60,11 @@ const App = () => {
         onAddExperience={addExperienceHandler}
         onAddEducation={addEducationHandler}
       />
-      <CvContainer personalData={personalData} />
+      <CvContainer
+        personalData={personalData}
+        experienceData={experienceData}
+        educationData={educationData}
+      />
       <Footer />
     </div>
   )

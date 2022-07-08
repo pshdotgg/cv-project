@@ -6,9 +6,9 @@ const Experience = (props) => {
   const [experience, setExperience] = useState({
     position: '',
     company: '',
-    city: '',
-    from: '',
-    to: '',
+    expCity: '',
+    expFrom: '',
+    expTo: '',
   })
 
   // const addComponent = () => {
@@ -58,28 +58,27 @@ const Experience = (props) => {
         <input
           type='text'
           placeholder='City'
-          name='city'
-          value={experience.city}
+          name='expCity'
+          value={experience.expCity}
           onChange={changeHandler}
         />
 
         <input
           type='text'
           placeholder='From'
-          name='from'
-          value={experience.from}
+          name='expFrom'
+          value={experience.expFrom}
           onChange={changeHandler}
         />
 
         <input
           type='text'
           placeholder='To'
-          name='to'
-          value={experience.to}
+          name='expTo'
+          value={experience.expTo}
           onChange={changeHandler}
         />
       </form>
-      <Button name='Delete' addClass='default-btn' />
     </div>
   )
 }
