@@ -1,59 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import Button from './Button'
-import uniqid from 'uniqid'
 
 const Education = (props) => {
   const [education, setEducation] = useState({
-    uni: '',
-    eduCity: '',
-    degree: '',
-    sub: '',
-    eduFrom: '',
-    eduTo: '',
+    uni: 'University of TechnologyOklahoma',
+    eduCity: 'Oklahoma',
+    degree: 'Master',
+    sub: 'Science',
+    eduFrom: '2008',
+    eduTo: '2010',
   })
-
-  // function handleChange(e, obj) {
-  //   // // setEducation(() => [{ ...education, [e.target.name]: e.target.value }])
-  //   // // console.log([{ ...education[0], [e.target.name]: e.target.value }])
-
-  //   // const inputElements = e.target.parentElement.children
-
-  //   // Array.from(inputElements).map((input) => {
-  //   //   if (input.name === e.target.name) {
-  //   //     // setEducation(() => [{ ...education, [e.target.name]: e.target.value }])
-  //   //     // console.log([{ ...education, ...{...education[0], [e.target.name]: e.target.value }}])
-  //   //   }
-  //   // })
-
-  //   e.preventDefault()
-  //   const { name, value } = e.target
-
-  //   obj = { ...obj, [name]: value }
-  //   console.log(e.target.parentElement)
-
-  //   // setEducation([
-  //   //   ...education,
-  //   //   { ...education[Number.parseInt(e.target.parentElement.id)], obj },
-  //   // ])
-  //   // console.log(e.target.parentElement.id)
-
-  //   // console.log(typeof e.target.parentElement.id)
-  // }
-
-  // const addComponent = () => {
-  //   const indexId = education[education.length - 1].id
-  //   setEducation([
-  //     ...education,
-  //     {
-  //       ...education[indexId],
-  //       id: education.length > 0 ? indexId + 1 : 0,
-  //     },
-  //   ])
-  // }
-
-  // const removeComponent = (id) => {
-  //   setEducation(education.filter((ed) => ed.id !== id))
-  // }
 
   useEffect(() => {
     props.onSaveEducationData(education)

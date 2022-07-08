@@ -1,30 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Button from './Button'
-import uniqid from 'uniqid'
 
 const Experience = (props) => {
   const [experience, setExperience] = useState({
-    position: '',
-    company: '',
-    expCity: '',
-    expFrom: '',
-    expTo: '',
+    position: 'Senior Web Developer',
+    company: 'Facebook Inc.',
+    expCity: 'Menlo Park',
+    expFrom: '2015',
+    expTo: '2021',
   })
-
-  // const addComponent = () => {
-  //   setExperience([
-  //     ...experience,
-  //     {
-  //       id:
-  //         experience.length > 0 ? experience[experience.length - 1].id + 1 : 0,
-  //       item: experienceForm,
-  //     },
-  //   ])
-  // }
-
-  // const removeComponent = (id) => {
-  //   setExperience(experience.filter((exp) => exp.id !== id))
-  // }
 
   useEffect(() => {
     props.onSaveExperienceData(experience)

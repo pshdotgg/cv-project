@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react'
 
 const Personal = (props) => {
   const [personal, setPersonal] = useState({
-    fName: '',
-    lName: '',
-    title: '',
-    address: '',
-    phone: '',
-    email: '',
-    bio: '',
+    fName: 'John',
+    lName: 'Doe',
+    title: 'Senior Web Developer',
+    address: 'Example Street 10',
+    phone: '123456789',
+    email: 'john.doe@gmail.com',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac ipsum nec gravida. Integer quis porta turpis. Aenean et metus.',
   })
 
   useEffect(() => {
