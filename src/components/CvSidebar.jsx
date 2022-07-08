@@ -5,12 +5,20 @@ const CvSidebar = (props) => {
   return (
     <div className='cv-sidebar'>
       <h3 className='cv-title'>Personal Details</h3>
-      <h4>Address</h4>
-      <p>{address}</p>
-      <h4>Phone</h4>
-      <p>{phone}</p>
-      <h4>Email</h4>
-      <p>{email}</p>
+      <div className='sidebar-details'>
+        <h4>Address</h4>
+        <p>{address}</p>
+      </div>
+
+      <div className='sidebar-details'>
+        <h4>Phone</h4>
+        <p>{phone}</p>
+      </div>
+
+      <div className='sidebar-details'>
+        <h4>Email</h4>
+        <p>{email}</p>
+      </div>
     </div>
   )
 }

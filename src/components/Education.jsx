@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
 const Education = (props) => {
+  const { id, uni, eduCity, degree, sub, eduFrom, eduTo } = props
+
   const [education, setEducation] = useState({
-    uni: '',
-    eduCity: 'Oklahoma',
-    degree: 'Master',
-    sub: 'Science',
-    eduFrom: '2008',
-    eduTo: '2010',
+    id: id,
+    uni: uni,
+    eduCity: eduCity,
+    degree: degree,
+    sub: sub,
+    eduFrom: eduFrom,
+    eduTo: eduTo,
   })
 
   useEffect(() => {
