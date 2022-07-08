@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Education = (props) => {
   const [education, setEducation] = useState({
-    uni: 'University of TechnologyOklahoma',
+    uni: '',
     eduCity: 'Oklahoma',
     degree: 'Master',
     sub: 'Science',

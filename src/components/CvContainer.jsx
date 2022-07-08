@@ -10,7 +10,6 @@ const CvContainer = (props) => {
   const { position, company, expCity, expFrom, expTo } = props.experienceData
   const { uni, eduCity, degree, sub, eduFrom, eduTo } = props.educationData
 
-  console.log(props.experienceData.expFrom)
   return (
     <div>
       <div className='cv-container'>
