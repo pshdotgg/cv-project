@@ -16,7 +16,7 @@ const FormContainer = (props) => {
   }
 
   const saveExperienceData = (enteredExperienceData) => {
-    props.onAddExperience(experienceData)
+    props.onAddExperience(enteredExperienceData)
   }
 
   const saveEducationDataHandler = (enteredEducationData) => {
@@ -30,15 +30,54 @@ const FormContainer = (props) => {
     //   return [...prevState, tempData]
     // })
 
-    const tempData = educationData.filter(
-      (item) => enteredEducationData.id === item.id
-    )
-    if (enteredEducationData.id === educationData.id) {
-      console.log(tempData)
-    } else console.log(enteredEducationData.id === educationData[0].id)
-    props.onAddEducation(enteredEducationData)
+    // const tempData = educationData.filter(
+    //   (item) => enteredEducationData.id === item.id
+    // )
 
-    console.log([...educationData, { ...tempData, ...enteredEducationData }])
+    // let newEducation
+
+    // educationData.forEach((educationItem) => {
+    //   console.log(enteredEducationData.id === educationItem.id)
+    //   if (enteredEducationData.id === educationItem.id) {
+    //     newEducation = {
+    //       ...educationItem,
+    //       ...enteredEducationData,
+    //     }
+    //   } else newEducation = educationItem
+    // })
+    // setEducationData((prevState) => {
+    //   console.log([{ ...prevState, ...newEducation }])
+    // })
+
+    // setEducationData([...educationData, ...newEducation])
+
+    // const newData = educationData.filter(
+    //   (item) => item.id === enteredEducationData.id
+    // )
+    // console.log('new', newData)
+    // console.log('test', [...newData, ...enteredEducationData])
+
+    // setEducationData((prevState) => {
+    //   const newEducation = educationData.map((educationItem) => {
+    //     console.log(educationItem.id, '\n', enteredEducationData.id)
+    //     console.log(educationData)
+    //     if (enteredEducationData.id === educationItem.id) {
+    //       return {
+    //         ...educationItem,
+    //         ...enteredEducationData,
+    //       }
+    //     }
+    //     console.log(educationItem.id, enteredEducationData.id)
+    //     return educationItem
+    //   })
+
+    // console.log({ ...educationData, ...newEducation })
+
+    // props.onAddEducation(enteredEducationData)
+
+    // console.log([...educationData, { ...tempData, ...enteredEducationData }])
+
+    props.onAddEducation(enteredEducationData)
   }
 
   const addEducationClickHandler = () => {
@@ -47,16 +86,16 @@ const FormContainer = (props) => {
         ...prevEducationData,
         {
           id: uuid(),
-          uni: '',
-          eduCity: '',
-          degree: '',
-          sub: '',
-          eduFrom: '',
-          eduTo: '',
+          uni: 'Harvard University',
+          eduCity: 'Cambridge, Massachusetts',
+          degree: 'Masters',
+          sub: 'Science',
+          eduFrom: '2012',
+          eduTo: '2014',
         },
       ]
     })
-    console.log(educationData)
+    console.log('add click', educationData)
   }
 
   const removeEducationClickHandler = (id) => {
@@ -69,12 +108,11 @@ const FormContainer = (props) => {
     })
   }
 
-  // useEffect(() => console.log(educationData))
-
+  // useEffect(() => console.log(typeof educationData))
+  console.log('outside render', educationData)
   return (
     <div className='form-container'>
       <Personal onSavePersonalData={savePersonalDataHandler} />
-
       <h3>Experience</h3>
       {experienceData.map((item) => {
         return (
@@ -84,14 +122,13 @@ const FormContainer = (props) => {
           </>
         )
       })}
-
       <Button
         name='Add'
         addClass='default-btn'
         handleClick={addExperienceClickHandler}
       />
-
       <h3>Education</h3>
+      {console.log('inside render', educationData)}
       {educationData.map((item) => {
         return (
           <>
@@ -114,13 +151,11 @@ const FormContainer = (props) => {
           </>
         )
       })}
-
       <Button
         name='Add'
         addClass='default-btn'
         handleClick={() => addEducationClickHandler()}
       />
-
       {/* <Button name='Generate PDF' addClass='pdf-btn' /> */}
       {/* <Button name='Load Example' addClass='example-btn' /> */}
       {/* <Button name='Reset' addClass='reset-btn' /> */}

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 
 const Experience = (props) => {
   const [experience, setExperience] = useState({
-    position: 'Senior Web Developer',
-    company: 'Facebook Inc.',
+    position: 'Chief Execuitve Officer',
+    company: 'Tesla',
     expCity: 'Menlo Park',
     expFrom: '2015',
-    expTo: '2021',
+    expTo: '2022',
   })
 
   useEffect(() => {
