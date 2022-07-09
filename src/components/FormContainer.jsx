@@ -86,12 +86,12 @@ const FormContainer = (props) => {
         ...prevEducationData,
         {
           id: uuid(),
-          uni: 'Harvard University',
-          eduCity: 'Cambridge, Massachusetts',
-          degree: 'Masters',
-          sub: 'Science',
-          eduFrom: '2012',
-          eduTo: '2014',
+          uni: '',
+          eduCity: '',
+          degree: '',
+          sub: '',
+          eduFrom: '',
+          eduTo: '',
         },
       ]
     })
@@ -107,6 +107,8 @@ const FormContainer = (props) => {
       return [...prevExperienceData, {}]
     })
   }
+
+  // const resetClickHandler = () => {}
 
   // useEffect(() => console.log(typeof educationData))
   console.log('outside render', educationData)
@@ -158,7 +160,11 @@ const FormContainer = (props) => {
       />
       {/* <Button name='Generate PDF' addClass='pdf-btn' /> */}
       {/* <Button name='Load Example' addClass='example-btn' /> */}
-      {/* <Button name='Reset' addClass='reset-btn' /> */}
+      <Button
+        name='Reset'
+        addClass='reset-btn'
+        // handleClick={resetClickHandler}
+      />
     </div>
   )
 }
