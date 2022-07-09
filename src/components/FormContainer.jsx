@@ -160,11 +160,11 @@ const FormContainer = (props) => {
       />
       {/* <Button name='Generate PDF' addClass='pdf-btn' /> */}
       {/* <Button name='Load Example' addClass='example-btn' /> */}
-      <Button
+      {/* <Button
         name='Reset'
         addClass='reset-btn'
         // handleClick={resetClickHandler}
-      />
+      /> */}
     </div>
   )
 }
