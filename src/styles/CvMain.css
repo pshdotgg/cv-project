@@ -2,3 +2,17 @@
   color: #2d3a8c;
   border-bottom: 1px solid #cbd2d9;
 }
+
+.from-to-date {
+  font-weight: bold;
+  min-width: 110px;
+}
+
+.education,
+.experience {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+h4 {
+  margin: 6px 0;
+}

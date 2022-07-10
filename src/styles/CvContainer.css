@@ -57,8 +57,5 @@
   display: flex;
   align-items: center;
   gap: 40px;
-}
-
-.experience-section {
-  line-height: 0.4;
+  text-align: left;
 }

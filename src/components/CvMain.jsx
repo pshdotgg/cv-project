@@ -2,32 +2,47 @@ import React from 'react'
 import '../styles/CvMain.css'
 
 const CvMain = (props) => {
-  const { bio } = props
-  const { position, company, expCity, expFrom, expTo } = props
-  const { uni, eduCity, degree, sub, eduFrom, eduTo } = props
+  const { bio, experienceData, educationData } = props
+  console.log(educationData)
   return (
     <div className='cv-main'>
       <h3 className='cv-title'>About Me</h3>
       <p className='description'>{bio}</p>
 
       <h3 className='cv-title'>Experience</h3>
-      <div className='experience-section'>
-        <div>{expFrom + ' - ' + expTo}</div>
-        <div>
-          <h4>{position}</h4>
-          <div>{company + ', ' + expCity}</div>
-        </div>
-      </div>
+
+      {experienceData.map((item) => {
+        return (
+          <div className='experience-section'>
+            <div className='from-to-date'>
+              {item.expFrom + `${!item.expFrom ? '' : ' - '}` + item.expTo}
+            </div>
+            <div className='experience'>
+              <h4>{item.position}</h4>
+              <div>
+                {item.company + `${!item.company ? '' : ', '}` + item.expCity}
+              </div>
+            </div>
+          </div>
+        )
+      })}
 
       <h3 className='cv-title'>Education</h3>
-      <div className='education-section'>
-        <div>{eduFrom + ' - ' + eduTo}</div>
-        <div>
-          <h4>{uni + ', ' + eduCity}</h4>
-          <div>{'Degree: ' + degree}</div>
-          <div>{'Subject: ' + sub}</div>
-        </div>
-      </div>
+
+      {educationData.map((item) => {
+        return (
+          <div className='education-section'>
+            <div className='from-to-date'>
+              {item.eduFrom + `${!item.eduFrom ? '' : ' - '}` + item.eduTo}
+            </div>
+            <div className='education'>
+              <h4>{item.uni + `${!item.uni ? '' : ', '}` + item.eduCity}</h4>
+              <div>{`${!item.degree ? '' : `Degree: `}` + item.degree}</div>
+              <div>{`${!item.sub ? '' : 'Subject: '}` + item.sub}</div>
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }

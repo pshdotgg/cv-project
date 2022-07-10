@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CvSidebar = (props) => {
-  const { address, phone, email } = props
+  const { address, phone, email } = props.personalData
   return (
     <div className='cv-sidebar'>
       <h3 className='cv-title'>Personal Details</h3>

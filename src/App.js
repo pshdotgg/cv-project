@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Header from './components/Header'
 import FormContainer from './components/FormContainer'
-import Footer from './components/Footer'
 import CvContainer from './components/CvContainer'
+import Footer from './components/Footer'
+import { empty } from './components/data'
 import { v4 as uuid } from 'uuid'
 
 import './styles/App.css'
@@ -121,7 +122,14 @@ const App = () => {
       return newEducation
     })
   }
-  console.log(experienceData)
+
+  const reset = () => {
+    setPersonalData(empty.personal)
+    setExperienceData([empty.experience])
+    setEducationData([empty.education])
+  }
+
+  console.log(educationData)
   return (
     <div>
       <Header />
@@ -133,6 +141,7 @@ const App = () => {
         onRemoveExperience={removeExperienceHandler}
         onAddEducation={addEducationHandler}
         onRemoveEducation={removeEducationHandler}
+        onReset={reset}
         personalData={personalData}
         educationData={educationData}
         experienceData={experienceData}

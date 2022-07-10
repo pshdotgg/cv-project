@@ -6,30 +6,21 @@ import '../styles/CvContainer.css'
 import CvHeader from './CvHeader'
 
 const CvContainer = (props) => {
-  const { fName, lName, title, address, phone, email, bio } = props.personalData
-  const { position, company, expCity, expFrom, expTo } = props.experienceData
-  const { uni, eduCity, degree, sub, eduFrom, eduTo } = props.educationData
+  const { personalData, experienceData, educationData } = props
+
+  console.log(personalData)
 
   return (
     <div>
       <div className='cv-container'>
-        <CvHeader fName={fName} lName={lName} title={title} />
+        <CvHeader personalData={personalData} />
         <div className='cv-main-container'>
           <CvMain
-            bio={bio}
-            position={position}
-            company={company}
-            expCity={expCity}
-            expFrom={expFrom}
-            expTo={expTo}
-            uni={uni}
-            eduCity={eduCity}
-            degree={degree}
-            sub={sub}
-            eduFrom={eduFrom}
-            eduTo={eduTo}
+            bio={personalData.bio}
+            experienceData={experienceData}
+            educationData={educationData}
           />
-          <CvSidebar address={address} phone={phone} email={email} />
+          <CvSidebar personalData={personalData} />
         </div>
       </div>
     </div>

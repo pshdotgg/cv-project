@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function CvHeader(props) {
-  const { fName, lName, title } = props
+  const { fName, lName, title } = props.personalData
+
+  console.log(props)
 
   return (
     <div className='cv-header'>

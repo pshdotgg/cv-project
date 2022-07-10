@@ -1,5 +1,5 @@
 button {
-  background-color: #323f4b;
+  background-color: #3e4c59;
   width: 100%;
   padding: 8px;
   color: #f5f7fa;
@@ -11,7 +11,7 @@ button {
 }
 
 .default-btn:hover {
-  background-color: #404040;
+  background-color: #1f2933;
 }
 
 .pdf-btn {
