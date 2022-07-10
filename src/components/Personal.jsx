@@ -1,27 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const Personal = (props) => {
-  const [personal, setPersonal] = useState({
-    id: props.id,
-    fName: 'Elon',
-    lName: 'Musk',
-    title: 'Chief Executive Officer',
-    address: 'Example Street 12',
-    phone: '490956789',
-    email: 'elonmusk@gmail.com',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac ipsum nec gravida. Integer quis porta turpis. Aenean et metus.',
-  })
-
-  useEffect(() => {
-    props.onSavePersonalData(personal)
-  }, [personal])
-
-  const changeHandler = (e, id) => {
-    // setPersonal((prevState) => {
-    //   return { ...prevState, [e.target.name]: e.target.value }
-    // })
-  }
+  const { personalData, onChangePersonalData } = props
 
   return (
     <div>
@@ -31,50 +12,50 @@ const Personal = (props) => {
           type='text'
           placeholder='First Name'
           name='fName'
-          value={personal.fName}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.fName}
+          onChange={onChangePersonalData}
         />
         <input
           type='text'
           placeholder='Last Name'
           name='lName'
-          value={personal.lName}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.lName}
+          onChange={onChangePersonalData}
         />
         <input
           type='text'
           placeholder='Title'
           name='title'
-          value={personal.title}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.title}
+          onChange={onChangePersonalData}
         />
         <input
           type='text'
           placeholder='Address'
           name='address'
-          value={personal.address}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.address}
+          onChange={onChangePersonalData}
         />
         <input
           type='text'
           placeholder='Phone'
           name='phone'
-          value={personal.phone}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.phone}
+          onChange={onChangePersonalData}
         />
         <input
           type='email'
           placeholder='Email'
           name='email'
-          value={personal.email}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.email}
+          onChange={onChangePersonalData}
         />
         <textarea
           name='bio'
           id='bio'
           placeholder='Bio'
-          value={personal.bio}
-          onChange={() => changeHandler(personal.id)}
+          value={personalData.bio}
+          onChange={onChangePersonalData}
         ></textarea>
       </form>
     </div>

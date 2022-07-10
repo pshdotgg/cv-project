@@ -39,21 +39,12 @@ const App = () => {
       eduFrom: '',
       eduTo: '',
     },
-
-    {
-      id: uuid(),
-      uni: '',
-      eduCity: '',
-      degree: '',
-      sub: '',
-      eduFrom: '',
-      eduTo: '',
-    },
   ])
 
-  const addPersonalHandler = (personal) => {
+  const changePersonalHandler = (e) => {
+    const { name, value } = e.target
     setPersonalData((prevPersonal) => {
-      return { ...prevPersonal, ...personal }
+      return { ...prevPersonal, [name]: value }
     })
   }
 
@@ -62,6 +53,7 @@ const App = () => {
       return [
         ...prevExperience,
         {
+          id: uuid(),
           position: '',
           company: '',
           expCity: '',
@@ -76,6 +68,20 @@ const App = () => {
     setExperienceData((prevEducation) =>
       prevEducation.filter((item) => item.id !== id)
     )
+  }
+
+  const changeExperienceHandler = (e, id) => {
+    const { name, value } = e.target
+    setExperienceData((prevExperience) => {
+      const newExperience = prevExperience.map((item) => {
+        if (item.id === id) {
+          return { ...item, [name]: value }
+        }
+        return item
+      })
+
+      return newExperience
+    })
   }
 
   const addEducationHandler = () => {
@@ -101,17 +107,33 @@ const App = () => {
     )
   }
 
-  console.log('cdcd', educationData)
+  const changeEducationHandler = (e, id) => {
+    const { name, value } = e.target
 
+    setEducationData((prevEducation) => {
+      const newEducation = prevEducation.map((item) => {
+        if (item.id === id) {
+          return { ...item, [name]: value }
+        }
+        return item
+      })
+
+      return newEducation
+    })
+  }
+  console.log(experienceData)
   return (
     <div>
       <Header />
       <FormContainer
-        onAddPersonal={addPersonalHandler}
+        onChangePersonal={changePersonalHandler}
+        onChangeExperience={changeExperienceHandler}
+        onChangeEducation={(e, id) => changeEducationHandler(e, id)}
         onAddExperience={addExperienceHandler}
         onRemoveExperience={removeExperienceHandler}
         onAddEducation={addEducationHandler}
         onRemoveEducation={removeEducationHandler}
+        personalData={personalData}
         educationData={educationData}
         experienceData={experienceData}
       />
