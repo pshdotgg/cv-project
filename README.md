@@ -1,4 +1,3 @@
-=======
 # cv-creator-project
 
 An app created with React to make your perfect resume.
