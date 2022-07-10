@@ -16,6 +16,7 @@ const FormContainer = (props) => {
     onRemoveEducation,
     onRemoveExperience,
     onReset,
+    onLoadExample,
     personalData,
     educationData,
     experienceData,
@@ -62,8 +63,12 @@ const FormContainer = (props) => {
         )
       })}
       <Button name='Add' addClass='default-btn' handleClick={onAddEducation} />
-      {/* <Button name='Generate PDF' addClass='pdf-btn' /> */}
-      {/* <Button name='Load Example' addClass='example-btn' /> */}
+
+      <Button
+        name='Load Example'
+        addClass='example-btn'
+        handleClick={onLoadExample}
+      />
       <Button name='Reset' addClass='reset-btn' handleClick={onReset} />
     </div>
   )

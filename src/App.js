@@ -3,7 +3,7 @@ import Header from './components/Header'
 import FormContainer from './components/FormContainer'
 import CvContainer from './components/CvContainer'
 import Footer from './components/Footer'
-import { empty } from './components/data'
+import { empty, fill } from './components/data'
 import { v4 as uuid } from 'uuid'
 
 import './styles/App.css'
@@ -129,7 +129,12 @@ const App = () => {
     setEducationData([empty.education])
   }
 
-  console.log(educationData)
+  const loadExample = () => {
+    setPersonalData(fill.personal)
+    setExperienceData(fill.experience)
+    setEducationData(fill.education)
+  }
+
   return (
     <div>
       <Header />
@@ -142,6 +147,7 @@ const App = () => {
         onAddEducation={addEducationHandler}
         onRemoveEducation={removeEducationHandler}
         onReset={reset}
+        onLoadExample={loadExample}
         personalData={personalData}
         educationData={educationData}
         experienceData={experienceData}
