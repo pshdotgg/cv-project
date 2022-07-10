@@ -8,8 +8,6 @@ import CvHeader from './CvHeader'
 const CvContainer = (props) => {
   const { personalData, experienceData, educationData } = props
 
-  console.log(personalData)
-
   return (
     <div>
       <div className='cv-container'>

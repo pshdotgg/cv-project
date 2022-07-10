@@ -3,7 +3,7 @@ import '../styles/CvMain.css'
 
 const CvMain = (props) => {
   const { bio, experienceData, educationData } = props
-  console.log(educationData)
+
   return (
     <div className='cv-main'>
       <h3 className='cv-title'>About Me</h3>
@@ -13,7 +13,7 @@ const CvMain = (props) => {
 
       {experienceData.map((item) => {
         return (
-          <div className='experience-section'>
+          <div className='experience-section' key={item.id}>
             <div className='from-to-date'>
               {item.expFrom + `${!item.expFrom ? '' : ' - '}` + item.expTo}
             </div>
@@ -31,7 +31,7 @@ const CvMain = (props) => {
 
       {educationData.map((item) => {
         return (
-          <div className='education-section'>
+          <div className='education-section' key={item.id}>
             <div className='from-to-date'>
               {item.eduFrom + `${!item.eduFrom ? '' : ' - '}` + item.eduTo}
             </div>

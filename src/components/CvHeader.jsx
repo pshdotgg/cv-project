@@ -3,8 +3,6 @@ import React from 'react'
 function CvHeader(props) {
   const { fName, lName, title } = props.personalData
 
-  console.log(props)
-
   return (
     <div className='cv-header'>
       <div>
