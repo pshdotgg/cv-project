@@ -1,3 +1,22 @@
+=======
+# cv-creator-project
+
+An app created with React to make your perfect resume.
+
+**Tech Used:**
+- React
+- JSX
+- HTML
+- CSS
+- JavaScript
+
+**Live Link:** https://kenizaya.github.io/cv-project/
+
+![CV-Creator-Proj](https://user-images.githubusercontent.com/104677763/178148635-963af76b-3a55-4c85-8392-9ac79d61b0a4.png)
+
+
+
+
 <<<<<<< HEAD
 # Getting Started with Create React App
 
@@ -69,19 +88,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# cv-creator-project
 
-An app created with React to make your perfect resume.
-
-**Tech Used:**
-- React
-- JSX
-- HTML
-- CSS
-- JavaScript
-
-**Live Link:** https://kenizaya.github.io/cv-project/
-
-![CV-Creator](https://user-images.githubusercontent.com/104677763/178088552-3088306f-485e-4797-94c1-a113abf98d56.png)
->>>>>>> 25c3dc52cbb9992c03a38ae6dcefab3a02f6ad9b
