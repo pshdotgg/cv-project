@@ -18,10 +18,12 @@ const Education = (props) => {
     props.onSaveEducationData(education)
   }, [education])
 
-  const changeHandler = (e) => {
-    setEducation((prevState) => {
-      return { ...prevState, [e.target.name]: e.target.value }
-    })
+  const changeHandler = (e, id) => {
+    // setEducation((prevState) => {
+    //   return { ...prevState, [e.target.name]: e.target.value }
+    // })
+    console.log('id', id)
+    props.onSaveEducationData(e, id)
   }
 
   return (
@@ -32,7 +34,7 @@ const Education = (props) => {
           placeholder='University'
           name='uni'
           value={education.uni}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(e, education.id)}
         />
 
         <input
@@ -40,7 +42,7 @@ const Education = (props) => {
           placeholder='City'
           name='eduCity'
           value={education.eduCity}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(e, education.id)}
         />
 
         <input
@@ -48,7 +50,7 @@ const Education = (props) => {
           placeholder='Degree'
           name='degree'
           value={education.degree}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(e, education.id)}
         />
 
         <input
@@ -56,7 +58,7 @@ const Education = (props) => {
           placeholder='Subject'
           name='sub'
           value={education.sub}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(e, education.id)}
         />
 
         <input
@@ -64,7 +66,7 @@ const Education = (props) => {
           placeholder='From'
           name='eduFrom'
           value={education.eduFrom}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(e, education.id)}
         />
 
         <input
@@ -72,7 +74,7 @@ const Education = (props) => {
           placeholder='To'
           name='eduTo'
           value={education.eduTo}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(e, education.id)}
         />
       </form>
     </div>

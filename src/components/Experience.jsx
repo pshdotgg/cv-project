@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react'
 
 const Experience = (props) => {
+  const { id, position, company, expCity, expFrom, expTo } = props
   const [experience, setExperience] = useState({
-    position: 'Chief Execuitve Officer',
-    company: 'Tesla',
-    expCity: 'Menlo Park',
-    expFrom: '2015',
-    expTo: '2022',
+    id: id,
+    position: position,
+    company: company,
+    expCity: expCity,
+    expFrom: expFrom,
+    expTo: expTo,
   })
 
-  useEffect(() => {
-    props.onSaveExperienceData(experience)
-  }, [experience])
+  // useEffect(() => {
+  //   props.onSaveExperienceData(experience)
+  // }, [experience])
 
-  const changeHandler = (e) => {
-    setExperience((prevExperience) => {
-      return { ...prevExperience, [e.target.name]: e.target.value }
-    })
+  const changeHandler = (e, id) => {
+    // setExperience((prevExperience) => {
+    //   return { ...prevExperience, [e.target.name]: e.target.value }
+    // })
+    console.log(id)
   }
 
   return (
@@ -27,7 +30,7 @@ const Experience = (props) => {
           placeholder='Position'
           name='position'
           value={experience.position}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(experience.id)}
         />
 
         <input
@@ -35,7 +38,7 @@ const Experience = (props) => {
           placeholder='Company'
           name='company'
           value={experience.company}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(experience.id)}
         />
 
         <input
@@ -43,7 +46,7 @@ const Experience = (props) => {
           placeholder='City'
           name='expCity'
           value={experience.expCity}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(experience.id)}
         />
 
         <input
@@ -51,7 +54,7 @@ const Experience = (props) => {
           placeholder='From'
           name='expFrom'
           value={experience.expFrom}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(experience.id)}
         />
 
         <input
@@ -59,7 +62,7 @@ const Experience = (props) => {
           placeholder='To'
           name='expTo'
           value={experience.expTo}
-          onChange={changeHandler}
+          onChange={(e) => changeHandler(experience.id)}
         />
       </form>
     </div>
