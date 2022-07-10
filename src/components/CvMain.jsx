@@ -36,9 +36,10 @@ const CvMain = (props) => {
               {item.eduFrom + `${!item.eduFrom ? '' : ' - '}` + item.eduTo}
             </div>
             <div className='education'>
-              <h4>{item.uni + `${!item.uni ? '' : ', '}` + item.eduCity}</h4>
-              <div>{`${!item.degree ? '' : `Degree: `}` + item.degree}</div>
-              <div>{`${!item.sub ? '' : 'Subject: '}` + item.sub}</div>
+              <h4>
+                {item.degree + `${!item.degree ? '' : ' in '}` + item.sub}
+              </h4>
+              <div>{item.uni}</div>
             </div>
           </div>
         )
