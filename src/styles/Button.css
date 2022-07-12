@@ -14,8 +14,16 @@ button {
   background-color: #1f2933;
 }
 
-.example-btn {
+.generate-btn {
   margin-top: 30px;
+  background-color: #27ab83;
+}
+
+.generate-btn:hover {
+  background-color: #199473;
+}
+
+.example-btn {
   background-color: #f0b429;
 }
 .example-btn:hover {

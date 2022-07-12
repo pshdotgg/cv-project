@@ -5,11 +5,11 @@ import CvSidebar from './CvSidebar'
 import '../styles/CvContainer.css'
 import CvHeader from './CvHeader'
 
-const CvContainer = (props) => {
+const CvContainer = React.forwardRef((props, ref) => {
   const { personalData, experienceData, educationData } = props
 
   return (
-    <div>
+    <div ref={ref}>
       <div className='cv-container'>
         <CvHeader personalData={personalData} />
         <div className='cv-main-container'>
@@ -23,6 +23,6 @@ const CvContainer = (props) => {
       </div>
     </div>
   )
-}
+})
 
 export default CvContainer

@@ -20,6 +20,7 @@ const FormContainer = (props) => {
     personalData,
     educationData,
     experienceData,
+    printHandler,
   } = props
 
   return (
@@ -63,6 +64,12 @@ const FormContainer = (props) => {
         )
       })}
       <Button name='Add' addClass='default-btn' handleClick={onAddEducation} />
+
+      <Button
+        name='Generate Pdf'
+        addClass='generate-btn'
+        handleClick={printHandler}
+      />
 
       <Button
         name='Load Example'
