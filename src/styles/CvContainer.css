@@ -3,7 +3,6 @@
   background-color: #f5f7fa;
   margin: 40px auto;
   border-bottom: 16px solid #2d3a8c;
-  min-height: 120vh;
   border-radius: 8px;
   box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.2);
 }
@@ -33,7 +32,7 @@
   margin-right: 20px;
   background-color: #2d3a8c;
   width: auto;
-  min-height: 100vh;
+  min-height: 78vh;
   padding: 0 20px;
   margin: 0;
   color: #f5f7fa;
