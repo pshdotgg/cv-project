@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useReactToPrint } from 'react-to-print'
 import Header from './components/Header'
 import FormContainer from './components/FormContainer'
@@ -8,42 +8,54 @@ import { empty, fill } from './components/data'
 import { v4 as uuid } from 'uuid'
 
 import './styles/App.css'
-import { Component } from 'react'
+
+const getLocalStorage = (listKey) => {
+  let list = localStorage.getItem(listKey)
+  if (list) {
+    return JSON.parse(localStorage.getItem(listKey))
+  } else return []
+}
 
 const App = () => {
   const cvContainerRef = useRef()
-  const [personalData, setPersonalData] = useState({
-    fName: '',
-    lName: '',
-    title: '',
-    address: '',
-    phone: '',
-    email: '',
-    bio: '',
-  })
+  const [personalData, setPersonalData] = useState(
+    getLocalStorage('personal') || {
+      fName: '',
+      lName: '',
+      title: '',
+      address: '',
+      phone: '',
+      email: '',
+      bio: '',
+    }
+  )
 
-  const [experienceData, setExperienceData] = useState([
-    {
-      id: uuid(),
-      position: '',
-      company: '',
-      expCity: '',
-      expFrom: '',
-      expTo: '',
-    },
-  ])
+  const [experienceData, setExperienceData] = useState(
+    getLocalStorage('experience') || [
+      {
+        id: uuid(),
+        position: '',
+        company: '',
+        expCity: '',
+        expFrom: '',
+        expTo: '',
+      },
+    ]
+  )
 
-  const [educationData, setEducationData] = useState([
-    {
-      id: uuid(),
-      uni: '',
-      eduCity: '',
-      degree: '',
-      sub: '',
-      eduFrom: '',
-      eduTo: '',
-    },
-  ])
+  const [educationData, setEducationData] = useState(
+    getLocalStorage('education') || [
+      {
+        id: uuid(),
+        uni: '',
+        eduCity: '',
+        degree: '',
+        sub: '',
+        eduFrom: '',
+        eduTo: '',
+      },
+    ]
+  )
 
   const changePersonalHandler = (e) => {
     const { name, value } = e.target
@@ -141,6 +153,18 @@ const App = () => {
   const printHandler = useReactToPrint({
     content: () => cvContainerRef.current,
   })
+
+  useEffect(() => {
+    localStorage.setItem('personal', JSON.stringify(personalData))
+  }, [personalData])
+
+  useEffect(() => {
+    localStorage.setItem('experience', JSON.stringify(experienceData))
+  }, [experienceData])
+
+  useEffect(() => {
+    localStorage.setItem('education', JSON.stringify(educationData))
+  }, [educationData])
 
   return (
     <div>
