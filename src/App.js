@@ -13,7 +13,7 @@ const getLocalStorage = (listKey) => {
   let list = localStorage.getItem(listKey)
   if (list) {
     return JSON.parse(localStorage.getItem(listKey))
-  } else return []
+  }
 }
 
 const App = () => {
@@ -142,6 +142,10 @@ const App = () => {
     setPersonalData(empty.personal)
     setExperienceData([empty.experience])
     setEducationData([empty.education])
+
+    localStorage.removeItem('personal')
+    localStorage.removeItem('experience')
+    localStorage.removeItem('education')
   }
 
   const loadExample = () => {
