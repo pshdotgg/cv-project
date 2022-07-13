@@ -11,8 +11,7 @@ An app created with React to make your perfect resume.
 
 **Live Link:** https://kenizaya.github.io/cv-project/
 
-![CV-Creator-Proj](https://user-images.githubusercontent.com/104677763/178148635-963af76b-3a55-4c85-8392-9ac79d61b0a4.png)
-
+![CV-Creator (1)](https://user-images.githubusercontent.com/104677763/178407180-fcf3820a-9f61-4519-843b-86e7f8ae3039.png)
 
 
 
