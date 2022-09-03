@@ -6,3 +6,9 @@
   margin: 0;
   padding: 30px;
 }
+
+@media (max-width: 760px) {
+  .header {
+    width: 800px;
+  }
+}

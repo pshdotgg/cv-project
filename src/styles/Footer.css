@@ -9,3 +9,9 @@
   color: inherit;
   font-weight: bold;
 }
+
+@media (max-width: 760px) {
+  .footer {
+    width: 800px;
+  }
+}
